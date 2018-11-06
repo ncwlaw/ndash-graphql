@@ -1,0 +1,10 @@
+version: '3'
+services:
+  apollo-graphql:
+    build: ./
+    command: "nodemon -L /usr/workspace/src/index.js"
+    ports:
+      - 4000:4000
+    volumes:
+      - ./:/usr/workspace
+      - /usr/workspace/node_modules

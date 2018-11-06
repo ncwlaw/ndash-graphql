@@ -1,0 +1,27 @@
+{
+  "name": "ndash-graphql",
+  "version": "1.0.0",
+  "description": "GraphQL setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncwlaw/ndash-graphql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ncwlaw/ndash-graphql/issues"
+  },
+  "homepage": "https://github.com/ncwlaw/ndash-graphql#readme",
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
