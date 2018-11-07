@@ -1,10 +1,11 @@
 version: '3'
 services:
-  apollo-graphql:
+  graphql:
+    environment: 
+      - ROOT_DIR="usr/src/src"
     build: ./
-    command: "nodemon -L /usr/workspace/src/index.js"
     ports:
       - 4000:4000
     volumes:
-      - ./:/usr/workspace
-      - /usr/workspace/node_modules
+      - ./:/usr/src
+      - /usr/src/node_modules

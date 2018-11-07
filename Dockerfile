@@ -1,8 +1,8 @@
 FROM node:carbon
-WORKDIR /usr/workspace
+WORKDIR usr/src
 
 COPY package*.json ./
-RUN npm install && npm install -g nodemon
+RUN npm install
 COPY . .
 
 EXPOSE 4000

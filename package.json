@@ -19,7 +19,12 @@
   "homepage": "https://github.com/ncwlaw/ndash-graphql#readme",
   "dependencies": {
     "apollo-server": "^2.1.0",
-    "graphql": "^14.0.2"
+    "dotenv": "^6.1.0",
+    "elasticsearch": "^15.2.0",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
+    "node-fetch": "^2.2.1",
+    "ramda": "^0.25.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
