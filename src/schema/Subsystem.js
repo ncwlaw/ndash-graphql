@@ -4,26 +4,24 @@ const Build = require('../model/Build');
 
 const typeDef = gql`
   extend type Query {
-    components: [Component]
+    subsystems: [Subsystem]
   }
 
-  "System Components"
-  type Component {
+  "Subsystem Components"
+  type Subsystem {
     id: ID!
     system: String
     subsystem: String
-    component: String
   }
 `;
 
 const resolver = {
   Query: {
-    components: (parent, _, context) => Build.getComponents(context),
+    subsystems: (parent, _, context) => Build.getSubsystems(context),
   },
-  Component: {
+  Subsystem: {
     id: prop('build_id'),
     system: prop('namespace'),
-    component: prop('gitRepo'),
   },
 };
 

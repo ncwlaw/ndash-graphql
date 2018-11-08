@@ -1,6 +1,6 @@
 const env = require('dotenv').config();
 const { ApolloServer } = require('apollo-server');
-const elasticsearch = require('./config/elasticsearch');
+const ElasticSearchConnector = require('./connector/elasticsearch');
 const settings = require('./config/settings');
 const { typeDefs, resolvers } = require('./schema/index');
 const {
@@ -14,9 +14,12 @@ const {
 const server = new ApolloServer({
   typeDefs: [...interfaceTypeDefs, ...typeDefs],
   resolvers: [...interfaceResolvers, ...resolvers],
-  context: ({ req }) => ({
-    elasticsearch: elasticsearch,
-  }),
+  context: async ({ req, headers }) => {
+    const elasticsearch = await ElasticSearchConnector.create();
+    return {
+      elasticsearch,
+    }
+  },
 });
 
 // This `listen` method launches a web-server.  Existing apps

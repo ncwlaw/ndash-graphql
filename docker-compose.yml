@@ -3,6 +3,7 @@ services:
   graphql:
     environment: 
       - ROOT_DIR="usr/src/src"
+      - ELASTICSEARCH_HOST=10.120.43.120:9200
     build: ./
     ports:
       - 4000:4000
