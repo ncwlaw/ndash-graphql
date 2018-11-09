@@ -20,7 +20,6 @@ const resolver = {
     subsystems: (parent, _, context) => Build.getSubsystems(context),
   },
   Subsystem: {
-    id: prop('build_id'),
     system: prop('namespace'),
   },
 };

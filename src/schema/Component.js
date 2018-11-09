@@ -21,7 +21,6 @@ const resolver = {
     components: (parent, _, context) => Build.getComponents(context),
   },
   Component: {
-    id: prop('build_id'),
     system: prop('namespace'),
     component: prop('gitRepo'),
   },

@@ -127,8 +127,8 @@ const latestBuilds = async (context) => {
     const environmentLens = R.compose(R.lensProp("by_env"), bucketLens);
     const buildLens = R.lensPath(["by_builds", "hits", "hits"]);
     return R.compose(
-      R.map(source => ({ ...source, version: "1", subsystem: "Cosmos" })),
-      R.map(R.prop("_source")),
+      R.map(source => ({ ...source, version: "1.0.10", subsystem: "Cosmos" })),
+      R.map(({ _id: id, _source: source }) => ({ ...source, id })),
       R.reduce(R.concat, []),
       R.map(R.view(buildLens)),
       R.reduce(R.concat, []),

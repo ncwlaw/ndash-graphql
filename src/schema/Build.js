@@ -38,7 +38,6 @@ const resolver = {
     builds: (parent, _, context) => Build.getLatestBuilds(context),
   },
   Build: {
-    id: prop('build_id'),
     system: prop('namespace'),
     component: prop('gitRepo'),
     buildUrl: prop('build_url'),

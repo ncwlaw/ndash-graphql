@@ -28,7 +28,6 @@ const resolver = {
     projects: (parent, _, context) => Build.getProjects(context),
   },
   Project: {
-    id: prop('build_id'),
     system: prop('namespace'),
   }
 };
