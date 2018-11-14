@@ -8,9 +8,9 @@ const typeDef = gql`
     }
 
     "System Components"
-    type Component {
+    type Component implements IComponent {
         id: ID!
-        system: String
+        project: String
         subsystem: String
         component: String
     }
@@ -19,10 +19,6 @@ const typeDef = gql`
 const resolver = {
     Query: {
         components: (parent, _, context) => Build.getComponents(context),
-    },
-    Component: {
-        system: prop('namespace'),
-        component: prop('gitRepo'),
     },
 };
 

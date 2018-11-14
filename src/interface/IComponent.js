@@ -2,7 +2,7 @@ const {gql} = require('apollo-server');
 
 const typeDef = gql`
     interface IComponent {
-        system: String
+        project: String
         subsystem: String
         component: String
     }

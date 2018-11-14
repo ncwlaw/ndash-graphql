@@ -19,16 +19,13 @@ const typeDef = gql`
     "Jenkins Build"
     type Project {
         id: ID!
-        system: String
+        project: String
     }
 `;
 
 const resolver = {
     Query: {
         projects: (parent, _, context) => Build.getProjects(context),
-    },
-    Project: {
-        system: prop('namespace'),
     },
 };
 

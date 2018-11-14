@@ -1,4 +1,3 @@
-const env = require('dotenv').config();
 const {ApolloServer} = require('apollo-server');
 const ElasticSearchConnector = require('./connector/elasticsearch');
 const settings = require('./config/settings');

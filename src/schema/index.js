@@ -6,6 +6,7 @@ const {typeDef: Commit} = require('./Commit');
 const {typeDef: Ticket} = require('./Ticket');
 const {typeDef: Project, resolver: ProjectResolver} = require('./Project');
 const {typeDef: Build, resolver: BuildResolver} = require('./Build');
+const {typeDef: Report, resolver: ReportResolver} = require('./Report');
 const {
     typeDef: Component,
     resolver: ComponentResolver,
@@ -23,11 +24,21 @@ const Query = gql`
 `;
 
 module.exports = {
-    typeDefs: [Commit, Ticket, Build, Component, Project, Subsystem, Query],
+    typeDefs: [
+        Commit,
+        Ticket,
+        Build,
+        Component,
+        Project,
+        Subsystem,
+        Report,
+        Query,
+    ],
     resolvers: [
         BuildResolver,
         ComponentResolver,
         ProjectResolver,
         SubsystemResolver,
+        ReportResolver,
     ],
 };

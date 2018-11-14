@@ -10,7 +10,7 @@ const typeDef = gql`
     "Subsystem Components"
     type Subsystem {
         id: ID!
-        system: String
+        project: String
         subsystem: String
     }
 `;
@@ -18,9 +18,6 @@ const typeDef = gql`
 const resolver = {
     Query: {
         subsystems: (parent, _, context) => Build.getSubsystems(context),
-    },
-    Subsystem: {
-        system: prop('namespace'),
     },
 };
 
